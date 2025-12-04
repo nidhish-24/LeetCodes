@@ -20,17 +20,17 @@ class Solution {
          return route(root,"",list);
     }
 
-    public List<String> route(TreeNode root,String path, List<String> list){
+    public List<String> route(TreeNode root,String out, List<String> list){
        if(root==null){
         return list;
        }
        if(root.left==null && root.right==null){
-        path = path+String.valueOf(root.val);
-        list.add(path);
+        out = out+String.valueOf(root.val);
+        list.add(out);
        }
-       path = path + String.valueOf(root.val)+"->";
-       route(root.left,path,list);
-       route(root.right,path,list);
+       out = out + String.valueOf(root.val)+"->";
+       route(root.left,out,list);
+       route(root.right,out,list);
        return list;
     }
 }
