@@ -17,12 +17,15 @@ class Solution {
     TreeSet<Integer> set = new TreeSet<>();
     public int findSecondMinimumValue(TreeNode root) {
         secondLargest(root,set);
+   
         int count = set.size(); 
         if(count<=1){
             return -1;
         }
-        int min = set.first();               // smallest
-        Integer second = set.higher(min);    // next greater than min
+        int min = set.first();     
+         System.out.println(set);        
+        Integer second = set.higher(min);  
+       
         return (second == null) ? -1 : second;
   
 
