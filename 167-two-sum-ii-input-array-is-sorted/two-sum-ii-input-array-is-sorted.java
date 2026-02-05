@@ -1,23 +1,21 @@
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        Arrays.sort(nums);
-        int i=0,j=nums.length-1;
-        int[] arr= new int[2];
-        int sum;
+    public int[] twoSum(int[] num, int target) {
+        int i=0,j=num.length-1;
+        int[] nums = new int[2];
         while(i<j){
-            sum=nums[i]+nums[j];
-            if(sum==target){
-                arr[0]+=i+1;
-                arr[1]+=j+1;
-                return  arr;
+            if(num[j]+num[i]==target){
+                nums[0] = i+1 ;
+                nums[1] = j+1;
+                break;
             }
-            if(sum>target){
-                j--;
-            }
-            else{
-                i++;
-            }
+           else if(num[i]+num[j]>target){
+            j--;
         }
-        return arr;
+        else{
+            i++;
+        }
+        }
+        return nums;
+
     }
 }
