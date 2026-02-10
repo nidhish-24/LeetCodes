@@ -1,13 +1,13 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int n = nums.length;
-        if (n <= 2) return n;
-
-        int i = 2;  // pointer to place next allowed element
-
-        for (int j = 2; j < n; j++) {
-            if (nums[j] != nums[i - 2]) {
-                nums[i] = nums[j];
+        
+        if(nums.length<2){
+            return nums.length;
+        }
+        int i=2;
+        for(int j=2;j<nums.length;j++){
+            if(nums[j]!=nums[i-2]){
+                nums[i]=nums[j];
                 i++;
             }
         }
