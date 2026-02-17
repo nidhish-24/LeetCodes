@@ -8,7 +8,7 @@ class Solution {
             int right = Math.min(i + k - 1, arr.length - 1);
             
             // Reverse first k characters
-            while(left <= right) {
+            while(left < right) {
                 char temp = arr[left];
                 arr[left] = arr[right];
                 arr[right] = temp;
