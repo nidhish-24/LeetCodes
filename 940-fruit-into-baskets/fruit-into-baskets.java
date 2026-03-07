@@ -19,12 +19,14 @@ class Solution {
             }
             left++;
         }
-        right++;
+     
 
         maxfruits = Math.max(right-left+1,maxfruits);
+
+        right++;
        }
 
-        return maxfruits-1;    
+        return maxfruits;    
 
     }
 }
