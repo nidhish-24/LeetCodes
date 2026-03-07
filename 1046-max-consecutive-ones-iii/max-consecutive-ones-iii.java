@@ -1,22 +1,23 @@
 class Solution {
     public int longestOnes(int[] nums, int k) {
         
-        int right=0;
         int left=0;
-        HashMap<Integer,Integer> map= new HashMap<>();
+        int count=0;
         int cons=0;
-        while(right<nums.length){
-          
-          
-            map.put(nums[right],map.getOrDefault(nums[right],0)+1);
 
-            while(map.getOrDefault(0,0)>k){
-                map.put(nums[left],map.get(nums[left])-1);
-                left++;
+        for(int right=0;right<nums.length;right++){
+
+            if(nums[right]==0){
+                count++;
             }
-         
-          cons = Math.max(cons,right-left+1);
-          right++;
+            while(count>k){
+               if(nums[left]==0) {
+                count--;
+               }
+               left++;
+            }
+
+          cons = Math.max(right-left+1,cons);
         }
 
         return cons;
